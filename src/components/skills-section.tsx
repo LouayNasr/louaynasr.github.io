@@ -11,28 +11,31 @@ import {
   Terminal,
   Figma,
   Smartphone,
+  Layers,
+  Workflow,
+  Activity,
+  CheckCircle,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import type { Skill } from "../shared/schema";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  react: Blocks,
-  typescript: Code2,
-  javascript: Code2,
-  html: Globe,
-  css: Layout,
-  nodejs: Server,
-  python: Code2,
-  postgresql: Database,
-  mongodb: Database,
+  kotlin: Code2,
+  java: Code2,
+  compose: Blocks,
+  android: Smartphone,
+
+  layers: Layers,
+  flow: Workflow,
+
   git: GitBranch,
-  docker: Terminal,
+  agile: Activity,
+  pipeline: Terminal,
+
+  material: Palette,
   figma: Figma,
-  tailwind: Palette,
-  nextjs: Globe,
-  graphql: Server,
-  aws: Server,
   mobile: Smartphone,
+
   default: Wrench,
 };
 
@@ -41,15 +44,18 @@ interface SkillsSectionProps {
 }
 
 const categoryLabels: Record<string, string> = {
-  frontend: "Frontend",
-  backend: "Backend",
-  tools: "Tools & DevOps",
+  android: "Android",
+  architecture: "Architecture",
+  tools: "Tools & Process",
   design: "Design",
 };
 
-const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  frontend: Layout,
-  backend: Server,
+const categoryIcons: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
+  android: Smartphone,
+  architecture: Layers,
   tools: Wrench,
   design: Palette,
 };

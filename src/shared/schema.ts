@@ -51,7 +51,7 @@ export type InsertArticle = z.infer<typeof insertArticleSchema>;
 export const skillSchema = z.object({
   id: z.string(),
   name: z.string(),
-  category: z.enum(["frontend", "backend", "tools", "design"]),
+  category: z.enum(["android", "architecture", "tools", "design"]),
   icon: z.string(),
 });
 

@@ -3,6 +3,7 @@ import { Navigation } from "../components/navigation";
 import { Hero } from "../components/hero";
 import { ProjectsSection } from "../components/projects-section";
 import { SkillsSection } from "../components/skills-section";
+import { AboutSection } from "../components/about-section";
 import { ArticlesSection } from "../components/articles-section";
 import { ContactSection } from "../components/contact-section";
 import { Footer } from "../components/footer";
@@ -10,10 +11,11 @@ import {
   HeroSkeleton,
   ProjectsSectionSkeleton,
   SkillsSectionSkeleton,
+  AboutSkeleton,
   ArticlesSectionSkeleton,
 } from "../components/loading-skeleton";
-import { mockProfile, mockProjects, mockSkills, mockArticles } from "../lib/data";
-import type { Profile, Project, Article, Skill } from "../shared/schema";
+import { mockProfile, mockProjects, mockSkills, mockExperience, mockEducation, mockArticles } from "../lib/data";
+import type { Profile, Project, Article, Experience, Education, Skill } from "../shared/schema";
 
 
 export default function Home() {
@@ -32,15 +34,28 @@ const { data: skills, isLoading: skillsLoading } = useQuery<Skill[]>({
   queryFn: async () => mockSkills,
 });
 
+const { data: experience, isLoading: experienceLoading } = useQuery<Experience[]>({
+    queryKey: ["/api/experience"],
+    queryFn: async () => mockExperience,
+
+  });
+
+  const { data: education, isLoading: educationLoading } = useQuery<Education[]>({
+    queryKey: ["/api/education"],
+    queryFn: async () => mockEducation,
+  });
+
 const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
   queryKey: ["/api/articles"],
   queryFn: async () => mockArticles,
 });
 
+  const isLoading = profileLoading || experienceLoading || educationLoading;
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-
+      
       <main>
         {profileLoading || !profile ? (
           <HeroSkeleton />
@@ -52,6 +67,12 @@ const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
           <ProjectsSectionSkeleton />
         ) : (
           <ProjectsSection projects={projects} />
+        )}
+
+        {isLoading || !profile || !experience || !education ? (
+          <AboutSkeleton />
+        ) : (
+          <AboutSection profile={profile} experience={experience} education={education} />
         )}
 
         {skillsLoading || !skills ? (
