@@ -4,7 +4,6 @@ import { AboutSection } from "../components/about-section";
 import { SkillsSection } from "../components/skills-section";
 import { Footer } from "../components/footer";
 import { SkillsSectionSkeleton, AboutSkeleton } from "../components/loading-skeleton";
-import { Card, CardContent } from "../components/ui/card";
 import { mockProfile, mockSkills, mockExperience, mockEducation } from "../lib/data";
 import type { Profile, Skill, Experience, Education } from "../shared/schema";
 

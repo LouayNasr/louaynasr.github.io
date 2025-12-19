@@ -1,12 +1,8 @@
 import {
   Code2,
-  Database,
   Palette,
   Wrench,
   Blocks,
-  Globe,
-  Layout,
-  Server,
   GitBranch,
   Terminal,
   Figma,
@@ -14,7 +10,6 @@ import {
   Layers,
   Workflow,
   Activity,
-  CheckCircle,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import type { Skill } from "../shared/schema";
