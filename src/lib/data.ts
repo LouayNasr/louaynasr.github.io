@@ -12,7 +12,7 @@ export const mockProfile: Profile = {
   social: {
     github: "https://github.com/LouayNasr",
     linkedin: "https://linkedin.com/in/louaynasr/",
-    twitter: "https://x.com/louaynasr",
+    x: "https://x.com/louaynasr",
   },
 };
 

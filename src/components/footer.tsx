@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, X } from "lucide-react";
 import type { Profile } from "../shared/schema";
 
 interface FooterProps {
@@ -123,15 +123,15 @@ export function Footer({ profile }: FooterProps) {
                   <Linkedin className="h-5 w-5" />
                 </a>
               )}
-              {profile.social.twitter && (
+              {profile.social.x && (
                 <a
-                  href={profile.social.twitter}
+                  href={profile.social.x}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-twitter"
+                  data-testid="link-footer-x"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <X className="h-5 w-5" />
                 </a>
               )}
             </div>
@@ -141,9 +141,6 @@ export function Footer({ profile }: FooterProps) {
         <div className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground" data-testid="text-copyright">
             {currentYear} {profile.name}. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> using React
           </p>
         </div>
       </div>

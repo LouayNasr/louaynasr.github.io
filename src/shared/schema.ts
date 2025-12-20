@@ -106,7 +106,7 @@ export const profileSchema = z.object({
   social: z.object({
     github: z.string().optional(),
     linkedin: z.string().optional(),
-    twitter: z.string().optional(),
+    x: z.string().optional(),
   }),
 });
 

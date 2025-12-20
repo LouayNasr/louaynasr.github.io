@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 import type { Profile } from "../shared/schema";
 
@@ -73,15 +73,15 @@ export function Hero({ profile }: HeroProps) {
                   <Linkedin className="h-5 w-5" />
                 </a>
               )}
-              {profile.social.twitter && (
+              {profile.social.x && (
                 <a
-                  href={profile.social.twitter}
+                  href={profile.social.x}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-social-twitter"
+                  data-testid="link-social-x"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <X className="h-5 w-5" />
                 </a>
               )}
             </div>

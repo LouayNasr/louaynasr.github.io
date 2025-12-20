@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Send, Github, Linkedin, Twitter, CheckCircle2 } from "lucide-react";
+import { Mail, Send, Github, Linkedin, X, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../components/ui/button";
@@ -116,15 +116,15 @@ export function ContactSection({ profile }: ContactSectionProps) {
                         </a>
                       </Button>
                     )}
-                    {profile.social.twitter && (
+                    {profile.social.x && (
                       <Button variant="outline" size="icon" asChild>
                         <a
-                          href={profile.social.twitter}
+                          href={profile.social.x}
                           target="_blank"
                           rel="noopener noreferrer"
-                          data-testid="link-contact-twitter"
+                          data-testid="link-contact-x"
                         >
-                          <Twitter className="h-5 w-5" />
+                          <X className="h-5 w-5" />
                         </a>
                       </Button>
                     )}
