@@ -6,6 +6,7 @@ export const mockProfile: Profile = {
   tagline: "I craft performant Android applications with a strong focus on Jetpack Compose, clean architecture, and maintainable state management, delivering reliable and intuitive user experiences.",
   bio: "I'm an Android developer with 5 years of experience building mobile applications. I specialize in Kotlin and Jetpack Compose, with a strong focus on creating smooth, responsive, and intuitive user experiences. I have experience migrating apps to modern architectures, and implementing advanced features like audio playback, in-app updates, and cloud messaging. When I'm not coding, you can find me exploring new Android technologies, experimenting with Jetpack Compose, or improving my skills through personal projects. I believe in writing clean, maintainable code and am always eager to learn and grow.",
   email: "louaynasr90@gmail.com",
+  gsm: "00963 932 729 355",
   location: "As Suwayda, Syria",
   avatar: "/avatar.jpg",
   resumeUrl: "https://drive.google.com/file/d/13j3eX_GysKm43YJivC4XM-aqd2m03NyY/view",

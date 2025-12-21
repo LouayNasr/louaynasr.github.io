@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Send, Github, Linkedin, X, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Send, Github, Linkedin, X, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../components/ui/button";
@@ -35,30 +35,30 @@ export function ContactSection({ profile }: ContactSectionProps) {
   });
 
   const onSubmit = async (data: ContactForm) => {
-  try {
-    const response = await fetch("https://formspree.io/f/xpqaryqe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/xpqaryqe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (!response.ok) {
-      throw new Error("Formspree error");
+      if (!response.ok) {
+        throw new Error("Formspree error");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
     }
-
-    setSubmitted(true);
-    form.reset();
-  } catch {
-    toast({
-      title: "Error",
-      description: "Failed to send message. Please try again.",
-      variant: "destructive",
-    });
-  }
-};
+  };
 
 
   return (
@@ -82,14 +82,26 @@ export function ContactSection({ profile }: ContactSectionProps) {
                 <a
                   href={`mailto:${profile.email}`}
                   className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
-                  data-testid="link-contact-email"
-                >
+                  data-testid="link-contact-email">
                   <div className="p-3 rounded-full bg-primary/10">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
                     <p className="font-medium">{profile.email}</p>
+                  </div>
+                </a>
+
+                <a
+                  href={`https://wa.me/${profile.gsm.replace(/\D/g, '')}`} // remove any non-digit characters
+                  className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  data-testid="link-contact-whatsapp">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <Phone className="h-5 w-5 text-primary" /> {/* Replace with your WhatsApp icon */}
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">WhatsApp</p>
+                    <p className="font-medium">{profile.gsm}</p>
                   </div>
                 </a>
 

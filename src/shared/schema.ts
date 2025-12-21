@@ -100,6 +100,7 @@ export const profileSchema = z.object({
   tagline: z.string(),
   bio: z.string(),
   email: z.string(),
+  gsm: z.string(),
   location: z.string(),
   avatar: z.string(),
   resumeUrl: z.string().optional(),
