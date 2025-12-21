@@ -15,8 +15,6 @@ import {
   FormMessage,
 } from "../components/ui/form";
 import { contactFormSchema, type ContactForm, type Profile } from "../shared/schema";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "../lib/queryClient";
 import { useToast } from "../hooks/use-toast";
 
 interface ContactSectionProps {
@@ -36,26 +34,32 @@ export function ContactSection({ profile }: ContactSectionProps) {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: ContactForm) => {
-      return apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      setSubmitted(true);
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
+  const onSubmit = async (data: ContactForm) => {
+  try {
+    const response = await fetch("https://formspree.io/f/xpqaryqe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  const onSubmit = (data: ContactForm) => {
-    mutation.mutate(data);
-  };
+    if (!response.ok) {
+      throw new Error("Formspree error");
+    }
+
+    setSubmitted(true);
+    form.reset();
+  } catch {
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   return (
     <section className="py-16 md:py-24 lg:py-32">
@@ -213,10 +217,10 @@ export function ContactSection({ profile }: ContactSectionProps) {
                       <Button
                         type="submit"
                         className="w-full gap-2"
-                        disabled={mutation.isPending}
+                        disabled={form.formState.isSubmitting}
                         data-testid="button-submit-contact"
                       >
-                        {mutation.isPending ? (
+                        {form.formState.isSubmitting ? (
                           "Sending..."
                         ) : (
                           <>
