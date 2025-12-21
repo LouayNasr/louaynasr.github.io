@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# Louay Nasr — Android Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fast, and minimal portfolio showcasing my experience as an Android developer, projects I’ve built, and technologies I work with.
 
-Currently, two official plugins are available:
+Built with performance, clarity, and maintainability in mind.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 About Me
 
-## React Compiler
+I am an Android developer with strong experience in Kotlin and Jetpack Compose, focused on building clean, scalable, and user-centric applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I care about:
 
-## Expanding the ESLint configuration
+ - Clear architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ - Thoughtful state management
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+ - Maintainable UI systems
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+ - Practical engineering over hype
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ - **Frontend:** React, TypeScript, Vite
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+ - **Styling:** Modern CSS (responsive & accessible)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+## 📱 Featured Projects
+
+### ♟️ DoReMi Music Streaming
+
+A modern Android music app with advanced audio playback, offline support, and seamless user experience.
+
+ - Audio and video streaming
+
+ - offline streaming support
+
+ - in-app update flow
+
+ - Focus on stability 
+
+### ♟️ Chess Clock App
+
+A competitive chess timer built with Jetpack Compose.
+
+ - Custom time controls
+
+ - Landscape & portrait support
+
+ - Clear visual loss indicators
+
+ - Focus on performance and usability
+
+### 📰 News App
+
+A modern news application with a clean UI and structured state management.
+
+ - Reactive UI with Compose
+
+ - Efficient data flow
+
+ - Scalable architecture
+
+
+## 🎯 Purpose of This Portfolio
+
+ - Present real, production-style projects
+
+ - Demonstrate UI and state management skills
+
+ - Keep everything simple, fast, and readable
+
+No unnecessary animations. No distractions. Just signal.
+
+## 📬 Contact
+
+ - **GitHub:** @LouayNasr
+
+ - **Portfolio:** https://louaynasr.github.io
+
+ - **LinkedIn:** https://www.linkedin/in/louaynasr
+
+## 📄 License
+
+This portfolio is for personal and professional presentation.
+Feel free to explore the code, but do not reuse designs or content without permission.
