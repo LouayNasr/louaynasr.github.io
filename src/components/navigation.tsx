@@ -6,11 +6,11 @@ import { ThemeToggle } from "../components/theme-toggle";
 import { cn } from "../lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
+  { href: "#", label: "Home" },
+  { href: "#featuredProjects", label: "Projects" },
+  { href: "#about", label: "About" },
   // { href: "/articles", label: "Articles" },
-  { href: "/contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Navigation() {
@@ -32,6 +32,7 @@ export function Navigation() {
   }, [location]);
 
   return (
+    
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -42,18 +43,18 @@ export function Navigation() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/">
+          <a href="/">
             <span
               className="font-display text-xl font-semibold tracking-tight cursor-pointer"
               data-testid="link-logo"
             >
               Portfolio
             </span>
-          </Link>
+          </a>
 
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <a key={link.href} href={link.href}>
                 <span
                   className={cn(
                     "px-4 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer",
@@ -65,7 +66,7 @@ export function Navigation() {
                 >
                   {link.label}
                 </span>
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -88,7 +89,7 @@ export function Navigation() {
         <div className="md:hidden fixed inset-0 top-16 bg-background z-40">
           <nav className="flex flex-col p-6 gap-2">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
+              <a key={link.href} href={link.href}>
                 <span
                   className={cn(
                     "block px-4 py-3 text-lg font-medium rounded-md transition-colors cursor-pointer",
@@ -100,7 +101,7 @@ export function Navigation() {
                 >
                   {link.label}
                 </span>
-              </Link>
+              </a>
             ))}
           </nav>
         </div>

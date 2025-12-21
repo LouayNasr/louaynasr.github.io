@@ -1,5 +1,5 @@
-import { Link } from "wouter";
-import { ArrowRight, Download, Github, Linkedin, X } from "lucide-react";
+// import { Link } from "wouter";
+import { Download, Github, Linkedin, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 import type { Profile } from "../shared/schema";
 
@@ -34,12 +34,12 @@ export function Hero({ profile }: HeroProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Link href="/projects">
+              {/* <Link href="/projects">
                 <Button size="lg" className="gap-2" data-testid="button-view-projects">
                   View Projects
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-              </Link>
+              </Link> */}
               {profile.resumeUrl && (
                 <Button variant="outline" size="lg" className="gap-2" asChild data-testid="button-download-resume">
                   <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">

@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { Github, Linkedin, X } from "lucide-react";
 import type { Profile } from "../shared/schema";
 
@@ -14,14 +13,14 @@ export function Footer({ profile }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/">
+            <a href="/">
               <span
                 className="font-display text-xl font-semibold tracking-tight cursor-pointer"
                 data-testid="link-footer-logo"
               >
                 {profile.name}
               </span>
-            </Link>
+            </a>
             <p className="text-muted-foreground mt-3 text-sm max-w-xs">
               {profile.tagline}
             </p>
@@ -31,44 +30,34 @@ export function Footer({ profile }: FooterProps) {
             <h4 className="font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
+                <a key= "/" href="/">
                   <span
                     className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                     data-testid="link-footer-home"
                   >
                     Home
                   </span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/projects">
+                <a key = "#featuredProjects" href="#featuredProjects">
                   <span
                     className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                     data-testid="link-footer-projects"
                   >
                     Projects
                   </span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/about">
+                <a key = "#about" href="#about">
                   <span
                     className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                     data-testid="link-footer-about"
                   >
                     About
                   </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/articles">
-                  <span
-                    className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
-                    data-testid="link-footer-articles"
-                  >
-                    Articles
-                  </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -86,14 +75,14 @@ export function Footer({ profile }: FooterProps) {
                 </a>
               </li>
               <li>
-                <Link href="/contact">
+                <a key = "#contact" href="#contact">
                   <span
                     className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                     data-testid="link-footer-contact"
                   >
                     Get in Touch
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

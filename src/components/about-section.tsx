@@ -10,7 +10,7 @@ interface AboutSectionProps {
 
 export function AboutSection({ profile, experience, education }: AboutSectionProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section id="about" className="py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div>

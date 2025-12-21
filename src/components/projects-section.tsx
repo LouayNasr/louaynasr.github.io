@@ -1,6 +1,6 @@
-import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
-import { Button } from "../components/ui/button";
+// import { Link } from "wouter";
+// import { ArrowRight } from "lucide-react";
+// import { Button } from "../components/ui/button";
 import { ProjectCard } from "../components/project-card";
 import type { Project } from "../shared/schema";
 
@@ -15,7 +15,7 @@ export function ProjectsSection({ projects, showAll = false }: ProjectsSectionPr
   const displayProjects = showAll ? otherProjects : otherProjects.slice(0, 3);
 
   return (
-    <section className="py-16 md:py-24 lg:py-32">
+    <section id="featuredProjects" className="py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
@@ -26,14 +26,14 @@ export function ProjectsSection({ projects, showAll = false }: ProjectsSectionPr
               A selection of my recent work and personal projects.
             </p>
           </div>
-          {!showAll && (
+          {/* {!showAll && (
             <Link href="/projects">
               <Button variant="ghost" className="gap-2" data-testid="button-view-all-projects">
                 View All Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-          )}
+          )} */}
         </div>
 
         {featuredProject && (
