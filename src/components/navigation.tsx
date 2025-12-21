@@ -46,9 +46,8 @@ export function Navigation() {
           <a href="/">
             <span
               className="font-display text-xl font-semibold tracking-tight cursor-pointer"
-              data-testid="link-logo"
-            >
-              Portfolio
+              data-testid="link-logo">
+              Louay Nasr
             </span>
           </a>
 
