@@ -2,7 +2,6 @@
 
 A modern, fast, and minimal portfolio showcasing my experience as an Android developer, projects I’ve built, and technologies I work with.
 
-Built with performance, clarity, and maintainability in mind.
 
 ## 🚀 About Me
 
