@@ -4,7 +4,7 @@ import { Hero } from "../components/hero";
 import { ProjectsSection } from "../components/projects-section";
 import { SkillsSection } from "../components/skills-section";
 import { AboutSection } from "../components/about-section";
-import { ArticlesSection } from "../components/articles-section";
+// import { ArticlesSection } from "../components/articles-section";
 import { ContactSection } from "../components/contact-section";
 import { Footer } from "../components/footer";
 import {
@@ -45,10 +45,10 @@ const { data: experience, isLoading: experienceLoading } = useQuery<Experience[]
     queryFn: async () => mockEducation,
   });
 
-const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
-  queryKey: ["/api/articles"],
-  queryFn: async () => mockArticles,
-});
+// const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
+//   queryKey: ["/api/articles"],
+//   queryFn: async () => mockArticles,
+// });
 
   const isLoading = profileLoading || experienceLoading || educationLoading;
 
@@ -80,13 +80,13 @@ const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
         ) : (
           <SkillsSection skills={skills} />
         )}
-
+{/* 
         {articlesLoading || !articles ? (
           <ArticlesSectionSkeleton />
         ) : (
           <ArticlesSection articles={articles} />
         )}
-
+ */}
         {profile && <ContactSection profile={profile} />}
       </main>
 
