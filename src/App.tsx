@@ -8,14 +8,27 @@ import { ThemeProvider } from "./components/theme-provider";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import ProjectDetail from "./pages/project-detail";
+import { useEffect } from "react";
 // import About from "./pages/about";
 import Articles from "./pages/articles";
 import ArticleDetail from "./pages/article-detail";
 // import Contact from "./pages/contact";  
 import NotFound from "./pages/not-found";
+
+export function ScrollToTop() {
+  const [location] = useHashLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
 function AppRouter() {
   return (
     <Router hook={useHashLocation}>
+      <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/projects" component={Projects} />
