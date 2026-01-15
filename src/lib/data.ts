@@ -34,7 +34,7 @@ export const mockProjects: Project[] = [
     id: "2",
     title: "Split Time App",
     description: "Split Time is a customizable chess clock app, built with Jetpack Compose and modern Android architecture (MVI pattern).",
-    image: "/splittimeapp.png",
+    image: "/split_time_app_v2.png",
     category: "Utilities",
     technologies: ["Jetpack Compose", "Hilt", "DataStore", "MVI"],
     liveUrl: "",
@@ -43,7 +43,7 @@ export const mockProjects: Project[] = [
   },
   {
     id: "3",
-    title: "New Inshort app",
+    title: "News Inshort app",
     description: "modern Android application built using Jetpack Compose and Clean Architecture, it provides users with a concise list of news articles fetched from a remote API.",
     image: "/news_inshort.jpg",
     category: "News",
