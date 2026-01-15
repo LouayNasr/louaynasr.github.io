@@ -1,18 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "../components/navigation";
-import { ProjectsSection } from "../components/projects-section";
+import { ProjectCard } from "../components/project-card";
 import { Footer } from "../components/footer";
 import { ProjectsSectionSkeleton } from "../components/loading-skeleton";
 import type { Profile, Project } from "../shared/schema";
-
+import { mockProjects , mockProfile} from "../lib/data";
 export default function Projects() {
   const { data: profile } = useQuery<Profile>({
-    queryKey: ["/api/profile"],
+    queryKey: ["profile"],
+    queryFn: async () => mockProfile,
   });
 
   const { data: projects, isLoading } = useQuery<Project[]>({
-    queryKey: ["/api/projects"],
+    queryKey: ["projects"],
+    queryFn: async () => mockProjects,
   });
+
+  if (isLoading || !projects) {
+    return <ProjectsSectionSkeleton />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,15 +30,21 @@ export default function Projects() {
             All Projects
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            A collection of my work across web development, mobile apps, and more.
+            A collection of my work across mobile apps development, and more.
           </p>
-        </div>
 
-        {isLoading || !projects ? (
-          <ProjectsSectionSkeleton />
-        ) : (
-          <ProjectsSection projects={projects} showAll />
-        )}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          {projects.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-muted-foreground text-lg">No projects to display yet.</p>
+            </div>
+          )}
+        </div>
       </main>
 
       {profile && <Footer profile={profile} />}

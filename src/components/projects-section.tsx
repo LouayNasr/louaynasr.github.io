@@ -1,6 +1,6 @@
-// import { Link } from "wouter";
-// import { ArrowRight } from "lucide-react";
-// import { Button } from "../components/ui/button";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+import { Button } from "../components/ui/button";
 import { ProjectCard } from "../components/project-card";
 import type { Project } from "../shared/schema";
 
@@ -26,14 +26,14 @@ export function ProjectsSection({ projects, showAll = false }: ProjectsSectionPr
               A selection of my recent work and personal projects.
             </p>
           </div>
-          {/* {!showAll && (
-            <Link href="/projects">
+          {!showAll && (
+            <Link to="/projects">
               <Button variant="ghost" className="gap-2" data-testid="button-view-all-projects">
                 View All Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-          )} */}
+          )}
         </div>
 
         {featuredProject && (

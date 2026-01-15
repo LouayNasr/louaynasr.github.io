@@ -7,17 +7,22 @@ import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Skeleton } from "../components/ui/skeleton";
 import type { Profile, Project } from "../shared/schema";
+import { mockProjects, mockProfile} from "../lib/data";
+
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
 
   const { data: profile } = useQuery<Profile>({
     queryKey: ["/api/profile"],
+    queryFn: async () => mockProfile,
   });
 
-  const { data: project, isLoading } = useQuery<Project>({
-    queryKey: ["/api/projects", id],
-  });
+  const { data: project, isLoading } = useQuery<Project | undefined>({
+  queryKey: ["/api/projects", id],
+  queryFn: async () => mockProjects.find(p => p.id === id),
+});
+
 
   return (
     <div className="min-h-screen bg-background">
