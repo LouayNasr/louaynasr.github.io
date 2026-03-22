@@ -40,14 +40,14 @@ export function Hero({ profile }: HeroProps) {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link> */}
-              {profile.resumeUrl && (
+              {/* {profile.resumeUrl && (
                 <Button variant="outline" size="lg" className="gap-2" asChild data-testid="button-download-resume">
                   <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
                     <Download className="h-4 w-4" />
                     Download Resume
                   </a>
                 </Button>
-              )}
+              )} */}
             </div>
 
             <div className="flex items-center gap-4 justify-center lg:justify-start">
