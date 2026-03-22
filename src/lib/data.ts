@@ -34,6 +34,7 @@ export const mockProjects: Project[] = [
     id: "2",
     title: "Split Time App",
     description: "Split Time is a customizable chess clock app, built with Jetpack Compose and modern Android architecture (MVI pattern).",
+    longDescription: "SplitTime is a minimalist, and modern chess clock application built entirely with Jetpack Compose. It's designed to be a showcase of modern Android development practices, emphasizing a clean, testable architecture and a smooth, intuitive user experience.",
     image: "/split_time_app_v2.png",
     category: "Utilities",
     technologies: ["Jetpack Compose", "Hilt", "DataStore", "MVI"],
