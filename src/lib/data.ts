@@ -130,9 +130,9 @@ export const mockExperience: Experience[] = [
     company: "Rand Ltd",
     location: "Damascus, Syria",
     startDate: "2022",
-    endDate: "2025",
+    endDate: "2026",
     description: "Led the migration of a legacy Java application to Flutter while continuing hands-on development on the Java codebase, redesigned a 50+ screen mobile app, implemented Firebase Cloud Messaging with deep links, built in-app update flows, and enforced paid-feature access control.",
-    current: true,
+    current: false,
   },
   {
     id: "2",
