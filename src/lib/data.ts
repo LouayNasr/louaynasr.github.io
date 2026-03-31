@@ -8,7 +8,7 @@ export const mockProfile: Profile = {
   email: "louaynasr90@gmail.com",
   gsm: "+963 932 729 355",
   location: "As Suwayda, Syria",
-  avatar: "/avatar.jpg",
+  avatar: "/avatar.png",
   resumeUrl: "https://drive.google.com/file/d/13j3eX_GysKm43YJivC4XM-aqd2m03NyY/view",
   social: {
     github: "https://github.com/LouayNasr",
